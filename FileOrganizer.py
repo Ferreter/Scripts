@@ -28,17 +28,17 @@ def create_directory(directory_path):
     if not os.path.exists(directory_path):
         os.makedirs(directory_path)
 
-# Define file extensions for different categories
-file_categories = {
-    "Images": ['jpeg', 'JPG', 'jpg', 'png', 'gif', 'webp', 'tiff', 'tif', 'psd', 'raw', 'bmp', 'svg', 'ai', 'eps'],
-    "Documents": ['doc', 'docx', 'html', 'htm', 'odt', 'pdf', 'xls', 'xlsx', 'ods', 'ppt', 'pptx', 'txt', 'log'],
-    "AudioVideo": ['webm', 'mpg', 'mp2', 'mpeg', 'mpe', 'mpv', 'ogg', 'mp4', 'm4p', 'm4v', 'avi', 'wmv', 'mov', 'qt', 'flv', 'swf', 'avchd'],
-    "Programs": ['ppk', 'lnk', 'bat', 'bin', 'cmd', 'com', 'cpl', 'exe', 'inf1', 'ins', 'msc', 'msi', 'msp', 'pif', 'scr', 'vb', 'vbe', 'vbs', 'sh', 'deb', 'jar', 'java'],
-    "Archived": ['rar', '7z', 'zip', 'tar.gz']
-}
-
 # Function to move files to their respective directories based on file extensions
 def organize_files(source_dir, target_dir):
+    # Define file extensions for different categories
+    file_categories = {
+        "Images": ['jpeg', 'JPG', 'jpg', 'png', 'gif', 'webp', 'tiff', 'tif', 'psd', 'raw', 'bmp', 'svg', 'ai', 'eps'],
+        "Documents": ['doc', 'docx', 'html', 'htm', 'odt', 'pdf', 'xls', 'xlsx', 'ods', 'ppt', 'pptx', 'txt', 'log'],
+        "AudioVideo": ['webm', 'mpg', 'mp2', 'mpeg', 'mpe', 'mpv', 'ogg', 'mp4', 'm4p', 'm4v', 'avi', 'wmv', 'mov', 'qt', 'flv', 'swf', 'avchd'],
+        "Programs": ['ppk', 'lnk', 'bat', 'bin', 'cmd', 'com', 'cpl', 'exe', 'inf1', 'ins', 'msc', 'msi', 'msp', 'pif', 'scr', 'vb', 'vbe', 'vbs', 'sh', 'deb', 'jar', 'java'],
+        "Archived": ['rar', '7z', 'zip', 'tar.gz']
+    }
+
     for category, extensions in file_categories.items():
         category_dir = os.path.join(target_dir, category)
         create_directory(category_dir)
