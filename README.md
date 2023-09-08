@@ -98,4 +98,46 @@ The script will prompt you to specify a directory or use the default system's te
 
 Use this script with caution, especially when removing files. Ensure that you have backups of important data, as the script will permanently delete files that match the specified criteria.
 
+Certainly! Here's a `README.md` file generated for your script that cleans up files older than a week from the recycle bin:
+
+# Recycle Bin Cleaner
+
+The Recycle Bin Cleaner is a Python script designed to help you clean up files that have been in the recycle bin for more than a week. It specifically targets the Windows recycle bin.
+
+## Features
+
+- Remove files older than one week from the Windows recycle bin.
+- Simple and straightforward script.
+
+## How to Use
+
+1. Run the script in a Python environment:
+
+   ```
+   python recycle_bin_cleaner.py
+   ```
+
+2. The script will automatically locate the Windows recycle bin folder (typically "C:\$Recycle.Bin") and check for files that have been in the recycle bin for more than a week (604800 seconds).
+
+3. Any files that meet the age criteria will be permanently removed from the recycle bin.
+
+4. Any errors encountered during the removal process will be displayed with details.
+
+## Disclaimer
+
+Use this script with caution, especially when removing files. Ensure that you have backups of important data, as the script will permanently delete files that match the specified criteria.
+
+## Customization
+
+This script is specifically designed for the Windows recycle bin. If you need to adapt it for other platforms or customize the age criteria, you can modify the script accordingly.
+
+## Example Usage
+
+Here's an example of how to use the script:
+
+```
+python recycle_bin_cleaner.py
+```
+
+The script will automatically locate and clean the Windows recycle bin.
 
