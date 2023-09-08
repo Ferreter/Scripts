@@ -1,10 +1,12 @@
 import os
 import time
+import subprocess
+
 
 # Function to remove files older than a week from the recycle bin
 def clean_recycle_bin():
-    # Define the path to the recycle bin folder on Windows
-    recycle_bin_path = os.path.expanduser("~") + "\\RecycleBin"
+    # Get the path to the recycle bin
+    recycle_bin_path = "C:\$Recycle.Bin"
 
     if not os.path.exists(recycle_bin_path):
         print("Recycle bin not found.")
