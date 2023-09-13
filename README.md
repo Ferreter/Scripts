@@ -46,7 +46,7 @@ Here's an example of how to use the script:
 ```
 $ python file_organizer.py
 ```
-#--------------------------------
+# --------------------------------
 
 # Temporary File Remover
 
@@ -100,7 +100,7 @@ Use this script with caution, especially when removing files. Ensure that you ha
 
 Certainly! Here's a `README.md` file generated for your script that cleans up files older than a week from the recycle bin:
 
-#--------------------------------
+# --------------------------------
 
 # Recycle Bin Cleaner
 
@@ -143,9 +143,9 @@ python recycle_bin_cleaner.py
 
 The script will automatically locate and clean the Windows recycle bin.
 
-#--------------------------------
+# --------------------------------
 
-# Large File Finder and Mover
+# Large File Finder
 
 This Python script allows you to find and optionally move files that are 100MB or larger within a specified directory.
 
