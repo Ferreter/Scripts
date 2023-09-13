@@ -1,7 +1,5 @@
 import os
 import time
-import subprocess
-
 
 # Function to remove files older than a week from the recycle bin
 def clean_recycle_bin():
