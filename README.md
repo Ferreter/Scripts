@@ -46,7 +46,7 @@ Here's an example of how to use the script:
 ```
 $ python file_organizer.py
 ```
-
+#--------------------------------
 
 # Temporary File Remover
 
@@ -100,6 +100,8 @@ Use this script with caution, especially when removing files. Ensure that you ha
 
 Certainly! Here's a `README.md` file generated for your script that cleans up files older than a week from the recycle bin:
 
+#--------------------------------
+
 # Recycle Bin Cleaner
 
 The Recycle Bin Cleaner is a Python script designed to help you clean up files that have been in the recycle bin for more than a week. It specifically targets the Windows recycle bin.
@@ -140,4 +142,37 @@ python recycle_bin_cleaner.py
 ```
 
 The script will automatically locate and clean the Windows recycle bin.
+
+#--------------------------------
+
+# Large File Finder and Mover
+
+This Python script allows you to find and optionally move files that are 100MB or larger within a specified directory.
+
+## Prerequisites
+
+- Python 3.x
+
+## Usage
+
+1. Clone or download the script to your local machine.
+
+2. Open a terminal or command prompt and navigate to the directory containing the script.
+
+3. Run the script by entering the following command:
+
+   ```
+   python large_file_finder.py
+    ```
+Follow the prompts:
+
+You will be asked to enter a directory path. You can leave it empty to use the default directories (Downloads or Desktop).
+
+The script will then scan the specified directory and its subdirectories to find files that are 100MB or more in size. The path of each large file will be displayed as it is found.
+
+After the scan, you will be prompted to decide whether you want to move the large files to a new directory.
+
+If you choose to move the files, a new directory named "100MbMore" will be created in the same location as the input directory. All the large files will be moved into this new directory.
+
+The script will display a message indicating the number of files that have been moved.
 
