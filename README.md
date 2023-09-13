@@ -1,6 +1,6 @@
 # Index of Scripts below 
 1. [File Organizer Script](#file-organizer-script)
-2. [Temporary File Remover](#temporary-filer-remover)
+2. [Temporary File Remover](#temporary-file-remover)
 3. [Recycle Bin Cleaner ](#recycle-bin-cleaner)
 4. [Large File Finder](#large-file-finder)
 
