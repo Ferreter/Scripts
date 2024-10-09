@@ -33,10 +33,11 @@ def organize_files(source_dir, target_dir):
     # Define file extensions for different categories
     file_categories = {
         "Images": ['jpeg', 'JPG', 'jpg', 'png', 'gif', 'webp', 'tiff', 'tif', 'psd', 'raw', 'bmp', 'svg', 'ai', 'eps'],
-        "Documents": ['doc', 'docx', 'html', 'htm', 'odt', 'pdf', 'xls', 'xlsx', 'ods', 'ppt', 'pptx', 'txt', 'log', 'xlsm'],
+        "Documents": ['doc', 'docx', 'html', 'htm', 'odt', 'pdf', 'xls', 'xlsx', 'ods', 'ppt', 'pptx', 'txt', 'log', 'xlsm', 'odp'],
         "AudioVideo": ['webm', 'mpg', 'mp2', 'mpeg', 'mpe', 'mpv', 'ogg', 'mp3' ,'mp4', 'm4p', 'm4v', 'avi', 'wmv', 'mov', 'qt', 'flv', 'swf', 'avchd'],
         "Programs": ['ppk', 'lnk', 'bat', 'bin', 'cmd', 'com', 'cpl', 'exe', 'inf1', 'ins', 'msc', 'msi', 'msp', 'pif', 'scr', 'vb', 'vbe', 'vbs', 'sh', 'deb', 'jar', 'java'],
-        "Archived": ['rar', '7z', 'zip', 'tar.gz']
+        "Archived": ['rar', '7z', 'zip', 'tar.gz'],
+        "Coding": ['html', 'css', 'js', 'py', 'java', 'c', 'cpp', 'h', 'hpp', 'rb', 'php', 'ipynb', 'sh', 'json', 'xml', 'yml', 'yaml', 'sql', 'md', 'rst', 'csv', 'tsv', 'cs','h5']
     }
 
     for category, extensions in file_categories.items():
