@@ -41,12 +41,18 @@ def organize_files(source_dir, target_dir):
         "Coding": ['html', 'css', 'js', 'py', 'java', 'c', 'cpp', 'h', 'hpp', 'rb', 'php', 'ipynb', 'sh', 'json', 'xml', 'yml', 'yaml', 'sql', 'md', 'rst', 'csv', 'tsv', 'cs','h5']
     }
 
+    # Create the "Others" directory for uncategorized files
+    others_dir = os.path.join(target_dir, "Others")
+    create_directory(others_dir)
+
+    categorized_files = []
+
     for category, extensions in file_categories.items():
         category_dir = os.path.join(target_dir, category)
         create_directory(category_dir)
 
         for ext in extensions:
-            pattern = os.path.join(source_dir, f"*.{ext}")  # Update pattern to source_dir
+            pattern = os.path.join(source_dir, f"*.{ext}")
             files = glob.glob(pattern)
 
             # Add a progress bar for moving files
@@ -54,9 +60,22 @@ def organize_files(source_dir, target_dir):
                 for file in files:
                     try:
                         shutil.move(file, category_dir)
+                        categorized_files.append(file)
                         pbar.update(1)
                     except Exception as e:
                         print(f"Error moving {file} to {category_dir}: {e}")
+
+    # Now handle uncategorized files
+    uncategorized_files = [f for f in glob.glob(os.path.join(source_dir, "*")) if os.path.isfile(f) and f not in categorized_files]
+
+    # Move uncategorized files to "Others" folder
+    with tqdm(total=len(uncategorized_files), desc="Moving Other files", unit="file") as pbar:
+        for file in uncategorized_files:
+            try:
+                shutil.move(file, others_dir)
+                pbar.update(1)
+            except Exception as e:
+                print(f"Error moving {file} to {others_dir}: {e}")
 
 if __name__ == "__main__":
     current_directory = os.getcwd()
