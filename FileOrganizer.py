@@ -30,7 +30,7 @@ def create_directory(directory_path):
         os.makedirs(directory_path)
 
 # Function to move files to their respective directories based on file extensions
-def organize_files(source_dir, target_dir):
+def organize_files(source_dir, target_dir, dry_run=False):
     # Define file extensions for different categories
     file_categories = {
         "Images": ['jpeg', 'JPG', 'jpg', 'png', 'gif', 'webp', 'tiff', 'tif', 'psd', 'raw', 'bmp', 'svg', 'ai', 'eps'],
@@ -59,7 +59,10 @@ def organize_files(source_dir, target_dir):
             with tqdm(total=len(files), desc=f"Moving {category} files", unit="file") as pbar:
                 for file in files:
                     try:
-                        shutil.move(file, category_dir)
+                        if dry_run:
+                            print(f"Would move {file} to {category_dir}")
+                        else:
+                            shutil.move(file, category_dir)
                         categorized_files.append(file)
                         pbar.update(1)
                     except Exception as e:
@@ -72,7 +75,10 @@ def organize_files(source_dir, target_dir):
     with tqdm(total=len(uncategorized_files), desc="Moving Other files", unit="file") as pbar:
         for file in uncategorized_files:
             try:
-                shutil.move(file, others_dir)
+                if dry_run:
+                    print(f"Would move {file} to {others_dir}")
+                else:
+                    shutil.move(file, others_dir)
                 pbar.update(1)
             except Exception as e:
                 print(f"Error moving {file} to {others_dir}: {e}")
@@ -80,8 +86,14 @@ def organize_files(source_dir, target_dir):
 if __name__ == "__main__":
     current_directory = os.getcwd()
     target_directory = get_target_directory()
+
+    # Ask the user if they want a dry run
+    dry_run = input("Do you want to perform a dry run? (y/n): ").lower() == 'y'
     
     print(f"Organizing files from '{current_directory}' to '{target_directory}'...")
-    organize_files(current_directory, target_directory)
+    organize_files(current_directory, target_directory, dry_run=dry_run)
     
-    print("File organization completed.")
+    if dry_run:
+        print("Dry run completed. No files were moved.")
+    else:
+        print("File organization completed.")
