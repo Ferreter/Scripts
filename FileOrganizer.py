@@ -1,6 +1,7 @@
 import os
 import shutil
 import glob
+from tqdm import tqdm
 
 # Function to get user input for the directory and provide default options
 def get_target_directory():
@@ -45,18 +46,17 @@ def organize_files(source_dir, target_dir):
         create_directory(category_dir)
 
         for ext in extensions:
-            pattern = os.path.join(target_dir, f"*.{ext}")  # Update pattern to target_dir
+            pattern = os.path.join(source_dir, f"*.{ext}")  # Update pattern to source_dir
             files = glob.glob(pattern)
 
-            print(f"Found {len(files)} files with extension '{ext}' in {source_dir}")
-
-            for file in files:
-                try:
-                    print(f"Moving {file} to {category_dir}")
-                    shutil.move(file, category_dir)
-                except Exception as e:
-                    print(f"Error moving {file} to {category_dir}: {e}")
-
+            # Add a progress bar for moving files
+            with tqdm(total=len(files), desc=f"Moving {category} files", unit="file") as pbar:
+                for file in files:
+                    try:
+                        shutil.move(file, category_dir)
+                        pbar.update(1)
+                    except Exception as e:
+                        print(f"Error moving {file} to {category_dir}: {e}")
 
 if __name__ == "__main__":
     current_directory = os.getcwd()
@@ -66,4 +66,3 @@ if __name__ == "__main__":
     organize_files(current_directory, target_directory)
     
     print("File organization completed.")
- 
