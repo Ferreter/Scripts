@@ -24,7 +24,7 @@ def get_target_directory():
 
     return target_dir
 
-# Function to calculate file hash (MD5)
+
 def calculate_hash(file_path, chunk_size=1024):
     hash_md5 = hashlib.md5()
     try:
