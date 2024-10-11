@@ -6,50 +6,58 @@
 
 
 # File Organizer Script
-
 This Python script is designed to help you organize files in a directory based on their file extensions. It provides a user-friendly interface for selecting a target directory and categorizes files into specific folders based on their extensions.
+
+## Features
+
+- Organizes files into categories such as **Images**, **Documents**, **Audio/Video**, **Programs**, **Archived**, and **Coding**.
+- Provides a **dry run** option to preview file movements before they happen.
+- Displays a **progress bar** while moving files to keep track of the operation's progress.
+- Creates an **"Others"** folder for files that do not fit into any predefined category.
 
 ## How to Use
 
-1. Run the script in a Python environment.
-
+1. **Run the script in a Python environment**.
+   
 2. You will be prompted with the following options to choose a target directory:
+   - `1. Downloads (Default)`
+   - `2. Desktop (Default)`
+   - `3. Enter a custom directory path`
 
-   - **Downloads (Default)**
-   - **Desktop (Default)**
-   - **Enter a custom directory path**
+   Select the desired option by entering the corresponding number (`1`, `2`, or `3`). If you choose option `3`, you can enter a custom directory path.
 
-3. Select the desired option by entering the corresponding number (1, 2, or 3). If you choose option 3, you can enter a custom directory path.
+3. **Dry Run Option**:  
+   After selecting the directory, you’ll be asked if you want to perform a **dry run**. Choosing `y` will simulate the process and display which files would be moved, without actually moving them.
 
 4. The script will create subdirectories within the selected target directory for various file categories, including:
-
    - **Images**
    - **Documents**
-   - **AudioVideo**
+   - **Audio/Video**
    - **Programs**
    - **Archived**
+   - **Coding** (New)
+   - **Others** (for uncategorized files)
 
-5. It will then search for files in the current working directory (or a custom directory if specified) with extensions matching those in each category. Files found will be moved to their respective subdirectories within the target directory.
+   Files matching the extensions of each category will be moved to their respective subdirectories.
 
-6. Any errors encountered during the file-moving process will be displayed with details.
+5. Any errors encountered during the process will be displayed in the console.
 
-## Supported File Categories
+### Supported File Categories
 
-- **Images**: Supported extensions include jpeg, JPG, jpg, png, gif, webp, tiff, tif, psd, raw, bmp, svg, ai, eps.
+| Category      | Supported Extensions                                                                                      |
+|---------------|----------------------------------------------------------------------------------------------------------|
+| **Images**    | `jpeg`, `JPG`, `jpg`, `png`, `gif`, `webp`, `tiff`, `tif`, `psd`, `raw`, `bmp`, `svg`, `ai`, `eps`         |
+| **Documents** | `doc`, `docx`, `html`, `htm`, `odt`, `pdf`, `xls`, `xlsx`, `ods`, `ppt`, `pptx`, `txt`, `log`, `xlsm`, `odp` |
+| **Audio/Video** | `webm`, `mpg`, `mp2`, `mpeg`, `mpe`, `mpv`, `ogg`, `mp3`, `mp4`, `m4p`, `m4v`, `avi`, `wmv`, `mov`, `qt`, `flv`, `swf`, `avchd` |
+| **Programs**  | `ppk`, `lnk`, `bat`, `bin`, `cmd`, `com`, `cpl`, `exe`, `inf1`, `ins`, `msc`, `msi`, `msp`, `pif`, `scr`, `vb`, `vbe`, `vbs`, `sh`, `deb`, `jar`, `java` |
+| **Archived**  | `rar`, `7z`, `zip`, `tar.gz`                                                                              |
+| **Coding**    | `html`, `css`, `js`, `py`, `c`, `cpp`, `php`, `xml`, `json` (New)                                         |
 
-- **Documents**: Supported extensions include doc, docx, html, htm, odt, pdf, xls, xlsx, ods, ppt, pptx, txt, log.
+Files that do not fit into any of the above categories will be moved to an **"Others"** folder.
 
-- **AudioVideo**: Supported extensions include webm, mpg, mp2, mpeg, mpe, mpv, ogg, mp4, m4p, m4v, avi, wmv, mov, qt, flv, swf, avchd.
+### Example Usage
 
-- **Programs**: Supported extensions include ppk, lnk, bat, bin, cmd, com, cpl, exe, inf1, ins, msc, msi, msp, pif, scr, vb, vbe, vbs, sh, deb, jar, java.
-
-- **Archived**: Supported extensions include rar, 7z, zip, tar.gz.
-
-## Example Usage
-
-Here's an example of how to use the script:
-
-```
+```bash
 $ python file_organizer.py
 ```
 
