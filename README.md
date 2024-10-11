@@ -3,6 +3,7 @@
 2. [Temporary File Remover](#temporary-file-remover)
 3. [Recycle Bin Cleaner ](#recycle-bin-cleaner)
 4. [Large File Finder](#large-file-finder)
+5. [Password Generator](#password-generator)
 
 
 # File Organizer Script
@@ -187,3 +188,52 @@ If you choose to move the files, a new directory named "100MbMore" will be creat
 
 The script will display a message indicating the number of files that have been moved.
 
+
+# Password Generator
+
+This Python script generates a secure, random password using a combination of letters, digits, and special characters.
+
+## Features
+
+- Generates passwords with a mix of **lowercase** and **uppercase letters**, **digits**, and **special characters**.
+- The default password length is set to **24 characters**.
+- The password length can be easily customized by passing a different length as an argument to the function.
+
+## How to Use
+
+1. **Run the script in a Python environment**.
+
+2. By default, the script generates a password with **24 characters**, but you can modify the `length` parameter in the `generate_random_password()` function to adjust the password length.
+
+3. The password will be printed in the console once generated.
+
+### Example Usage
+
+```bash
+$ python PasswordGenerator.py
+```
+
+The script will output something like:
+
+```bash
+Generated Password: A1b2C3d4E5f6G7!@#$%^
+```
+
+### Customizing Password Length
+
+If you'd like to generate a password of a specific length, modify the call to `generate_random_password()` in the script:
+
+```python
+# Example: Generate a password of 16 characters
+generated_password = generate_random_password(16)
+```
+
+This will produce a 16-character password.
+
+## Password Character Set
+
+The password is generated using the following set of characters:
+
+- **Letters**: `a-z`, `A-Z` (lowercase and uppercase)
+- **Digits**: `0-9`
+- **Special Characters**: `!@#$%^&*()`
