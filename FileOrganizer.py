@@ -91,7 +91,7 @@ if __name__ == "__main__":
     dry_run = input("Do you want to perform a dry run? (y/n): ").lower() == 'y'
     
     print(f"Organizing files from '{current_directory}' to '{target_directory}'...")
-    organize_files(current_directory, target_directory, dry_run=dry_run)
+    organize_files(target_directory, target_directory, dry_run=dry_run)
     
     if dry_run:
         print("Dry run completed. No files were moved.")
